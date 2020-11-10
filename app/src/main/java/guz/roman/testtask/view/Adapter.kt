@@ -13,11 +13,11 @@ import guz.roman.testtask.model.data.Businesse
 import guz.roman.testtask.model.data.Coordinates
 
 
-class Adapter: RecyclerView.Adapter<Adapter.MyViewHolder>() {
+class Adapter : RecyclerView.Adapter<Adapter.MyViewHolder>() {
     var currentLocation = Location("")
     val restoraunts = mutableListOf<Businesse>()
 
-    class MyViewHolder(item: View): RecyclerView.ViewHolder(item){
+    class MyViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         var title: TextView = item.findViewById(R.id.titleNameItem)
         var textItem: TextView = item.findViewById(R.id.textItem)
         var image: ImageView = item.findViewById(R.id.imageItem)
@@ -25,7 +25,8 @@ class Adapter: RecyclerView.Adapter<Adapter.MyViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.restoraunt_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.restoraunt_item, parent, false)
         return MyViewHolder(view)
     }
 
@@ -34,20 +35,20 @@ class Adapter: RecyclerView.Adapter<Adapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val curentRestoran = restoraunts[position]
         holder.title.text = curentRestoran.name
-        holder.textItem.text = distance(curentRestoran.coordinates) + " км"
+        holder.textItem.text = distance(curentRestoran.coordinates) + " км. Ресторан в " + curentRestoran.location.city
 
-        Glide.with(holder.itemView.context).load(curentRestoran.imageUrl).into(holder.image)
+                Glide.with(holder.itemView.context).load(curentRestoran.imageUrl).into(holder.image)
     }
 
-    private fun distance(coordinates: Coordinates): String{
+    private fun distance(coordinates: Coordinates): String {
         val loc = Location("")
         loc.latitude = coordinates.latitude
         loc.longitude = coordinates.longitude
-        val distanseToRest = currentLocation.distanceTo(loc)/1000
+        val distanseToRest = currentLocation.distanceTo(loc) / 1000
         return distanseToRest.toString()
     }
 
-    fun setData(setNews: List<Businesse>, location: Location){
+    fun setData(setNews: List<Businesse>, location: Location) {
         currentLocation = location
         restoraunts.addAll(setNews)
         notifyDataSetChanged()
