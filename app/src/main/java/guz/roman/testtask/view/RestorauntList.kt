@@ -1,6 +1,5 @@
 package guz.roman.testtask.view
 
-import android.location.LocationManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
