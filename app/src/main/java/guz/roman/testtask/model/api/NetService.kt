@@ -1,9 +1,9 @@
 package guz.roman.testtask.model.api
 
+import guz.roman.testtask.model.data.RestorauntModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import guz.roman.testtask.model.data.RestorauntModel
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Header

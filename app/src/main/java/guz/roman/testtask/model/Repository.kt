@@ -1,7 +1,7 @@
 package guz.roman.testtask.model
 
-import kotlinx.coroutines.flow.Flow
 import guz.roman.testtask.model.data.RestorauntModel
+import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 

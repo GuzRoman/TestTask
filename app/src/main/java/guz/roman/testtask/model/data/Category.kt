@@ -6,6 +6,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Category(
-    val alias: String?,
-    val title: String?
+    val alias: String,
+    val title: String
 )

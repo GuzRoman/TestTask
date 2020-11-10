@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import guz.roman.testtask.model.RepositoryImpl
 import guz.roman.testtask.model.api.NetService
-import guz.roman.testtask.model.data.RestorauntModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 

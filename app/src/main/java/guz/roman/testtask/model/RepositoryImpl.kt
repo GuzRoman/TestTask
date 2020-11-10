@@ -2,12 +2,12 @@ package guz.roman.testtask.model
 
 import android.util.Log
 import guz.roman.testtask.model.api.NetService
+import guz.roman.testtask.model.data.RestorauntModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import java.io.IOException
-import guz.roman.testtask.model.data.RestorauntModel
 
 
 class RepositoryImpl(private val netService: NetService): Repository {
