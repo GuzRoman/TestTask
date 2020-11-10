@@ -25,5 +25,5 @@ data class Businesse(
     @Json(name = "display_phone")
     val displayPhone: String,
     val distance: Double,
-    val price: String
+    val price: String?
 )
