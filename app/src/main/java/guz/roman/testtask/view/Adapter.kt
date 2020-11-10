@@ -1,5 +1,6 @@
 package guz.roman.testtask.view
 
+import android.location.Location
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import guz.roman.testtask.R
 import guz.roman.testtask.model.data.Businesse
-import guz.roman.testtask.model.data.BusinessesModel
+import guz.roman.testtask.model.data.Coordinates
 
 
 class Adapter: RecyclerView.Adapter<Adapter.MyViewHolder>() {
-
-    val news = mutableListOf<Businesse>()
+    var currentLocation = Location("")
+    val restoraunts = mutableListOf<Businesse>()
 
     class MyViewHolder(item: View): RecyclerView.ViewHolder(item){
         var title: TextView = item.findViewById(R.id.titleNameItem)
@@ -28,18 +29,27 @@ class Adapter: RecyclerView.Adapter<Adapter.MyViewHolder>() {
         return MyViewHolder(view)
     }
 
-    override fun getItemCount() = news.size
+    override fun getItemCount() = restoraunts.size
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentNews = news[position]
-        holder.title.text = currentNews.name
+        val curentRestoran = restoraunts[position]
+        holder.title.text = curentRestoran.name
+        holder.textItem.text = distance(curentRestoran.coordinates) + " км"
 
-
-        Glide.with(holder.itemView.context).load(currentNews.imageUrl).into(holder.image)
+        Glide.with(holder.itemView.context).load(curentRestoran.imageUrl).into(holder.image)
     }
 
-    fun setData(setNews: List<Businesse>){
-        news.addAll(setNews)
+    private fun distance(coordinates: Coordinates): String{
+        val loc = Location("")
+        loc.latitude = coordinates.latitude
+        loc.longitude = coordinates.longitude
+        val distanseToRest = currentLocation.distanceTo(loc)/1000
+        return distanseToRest.toString()
+    }
+
+    fun setData(setNews: List<Businesse>, location: Location){
+        currentLocation = location
+        restoraunts.addAll(setNews)
         notifyDataSetChanged()
     }
 

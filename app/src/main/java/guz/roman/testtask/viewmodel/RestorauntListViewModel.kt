@@ -18,7 +18,7 @@ class RestorauntListViewModel(application: Application) : AndroidViewModel(appli
 
     private val repository = RepositoryImpl(NetService())
     val restorauntList = MutableLiveData<BusinessesModel>()
-    private var myLocation = Location("")
+    var myLocation = Location("")
 
     init {
         foo(application)

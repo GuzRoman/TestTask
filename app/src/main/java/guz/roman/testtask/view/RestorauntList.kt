@@ -34,12 +34,6 @@ class RestorauntList : Fragment() {
         recyclerView = view.myRecyclerWiew
         recyclerView.adapter = adapter
 
-//        location.startListeningUserLocation(requireContext(), object : LocationHelper.MyLocationListener{
-//            override fun onLocationChanged(location: Location) {
-//                currentLocation = location
-//            }
-//        })
-
         setNews()
 
         return view
@@ -48,7 +42,7 @@ class RestorauntList : Fragment() {
     private fun setNews() {
         val news = viewModel.restorauntList
         news.observe(viewLifecycleOwner, Observer {
-            adapter.setData(it.businesses)
+            adapter.setData(it.businesses, viewModel.myLocation)
         })
     }
 
