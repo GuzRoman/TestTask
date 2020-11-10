@@ -1,5 +1,6 @@
 package guz.roman.testtask.model.api
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import guz.roman.testtask.model.data.BusinessesModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
