@@ -1,6 +1,6 @@
 package guz.roman.testtask.model.api
 
-import guz.roman.testtask.model.data.RestorauntModel
+import guz.roman.testtask.model.data.BusinessesModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -23,7 +23,7 @@ interface NetService {
         @Query("term") term: String = "restaurants",
         @Query("latitude") latitude: String,
         @Query("longitude") longitude: String
-    ): List<RestorauntModel>
+    ): BusinessesModel
 
     companion object {
         operator fun invoke(): NetService {

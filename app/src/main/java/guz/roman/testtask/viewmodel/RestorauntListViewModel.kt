@@ -6,17 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import guz.roman.testtask.model.RepositoryImpl
 import guz.roman.testtask.model.api.NetService
+import guz.roman.testtask.model.data.BusinessesModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class RestorauntListViewModel : ViewModel() {
 
     private val repository = RepositoryImpl(NetService())
-    val restorauntList = MutableLiveData<List<RestorauntModel>>()
+    val restorauntList = MutableLiveData<BusinessesModel>()
 
     init {
         getData()
-
     }
 
     private fun getData() = viewModelScope.launch{

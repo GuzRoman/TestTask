@@ -84,11 +84,7 @@ dependencies {
     //MaterialDesign
     implementation 'com.google.android.material:material:1.2.1'
 
-    //Android Charts
-    implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'
-
     //Moshi
-    implementation 'com.google.code.gson:gson:2.8.6'
     implementation "com.squareup.retrofit2:converter-moshi:2.7.2"
 
     //Retrofit2
@@ -96,7 +92,7 @@ dependencies {
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
 
     //Okhttp3
-    implementation "com.squareup.okhttp3:okhttp:4.7.2"
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
 
     //Glide
@@ -105,17 +101,4 @@ dependencies {
     //Kodein
     implementation "org.kodein.di:kodein-di-generic-jvm:5.2.0"
     implementation "org.kodein.di:kodein-di-framework-android-x:5.2.0"
-//
-//    //Appolo
-//    implementation("com.apollographql.apollo:apollo-runtime:2.4.3")
-//
-//    // optional: if you want to use the normalized cache
-//    implementation("com.apollographql.apollo:apollo-normalized-cache-sqlite:2.4.3")
-//    // optional: for coroutines support
-//    implementation("com.apollographql.apollo:apollo-coroutines-support:2.4.3")
-//    // optional: if you just want the generated models and parsers and write your own HTTP code/cache code, you can remove apollo-runtime
-//    // and use apollo-api instead
-//    implementation("com.apollographql.apollo:apollo-api:2.4.3")
-
-
 }

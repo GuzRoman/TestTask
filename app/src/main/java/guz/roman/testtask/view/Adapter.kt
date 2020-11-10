@@ -8,12 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import guz.roman.testtask.R
-import guz.roman.testtask.model.data.RestorauntModel
+import guz.roman.testtask.model.data.Businesse
+import guz.roman.testtask.model.data.BusinessesModel
 
 
 class Adapter: RecyclerView.Adapter<Adapter.MyViewHolder>() {
 
-    val news = mutableListOf<RestorauntModel>()
+    val news = mutableListOf<Businesse>()
 
     class MyViewHolder(item: View): RecyclerView.ViewHolder(item){
         var title: TextView = item.findViewById(R.id.titleNameItem)
@@ -37,7 +38,7 @@ class Adapter: RecyclerView.Adapter<Adapter.MyViewHolder>() {
         Glide.with(holder.itemView.context).load(currentNews.imageUrl).into(holder.image)
     }
 
-    fun setData(setNews: List<RestorauntModel>){
+    fun setData(setNews: List<Businesse>){
         news.addAll(setNews)
         notifyDataSetChanged()
     }

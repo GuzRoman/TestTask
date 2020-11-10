@@ -37,7 +37,7 @@ class RestorauntList : Fragment() {
     private fun setNews() {
         val news = viewModel.restorauntList
         news.observe(viewLifecycleOwner, Observer {
-            adapter.setData(it)
+            adapter.setData(it.businesses)
         })
     }
 
